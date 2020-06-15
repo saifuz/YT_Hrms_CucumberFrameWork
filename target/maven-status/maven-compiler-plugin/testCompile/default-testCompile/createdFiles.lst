@@ -7,6 +7,7 @@ com\hrms\pages\PIMMenu.class
 com\hrms\stepdefinitions\LoginTestSteps.class
 com\hrms\pages\EmpQualifications.class
 com\hrms\utils\ExcellUtility.class
+com\hrms\stepdefinitions\EmpWorkExperienceSteps.class
 com\hrms\testbase\BaseClass.class
 com\hrms\pages\EmployeeListPage.class
 com\hrms\stepdefinitions\AdminQualifications.class

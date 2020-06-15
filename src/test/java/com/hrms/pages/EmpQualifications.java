@@ -69,4 +69,37 @@ public class EmpQualifications extends PIMMenu {
 
 	@FindBy(id="lang_data_table")
 	public WebElement langDataTableOnly;
+	
+	@FindBy(id="addWorkExperience")
+	public WebElement addWorkExperience;
+	
+	@FindBy(id="experience_employer")
+	public WebElement companyName;
+	
+	@FindBy(id="experience_jobtitle")
+	public WebElement jobTitle;
+	
+	@FindBy(id="experience_from_date")
+	public WebElement fromDate;
+	
+	@FindBy(id="experience_to_date")
+	public WebElement toDate;
+	
+	@FindBy(id="experience_comments")
+	public WebElement commentWorkExp;
+	
+	@FindBy(id="btnWorkExpSave")
+	public WebElement saveWorkExp;
+	
+	@FindBy(id="btnWorkExpCancel")
+	public WebElement cancelWorkExp;
+	
+	@FindBy(xpath="//span[@for='experience_employer']")
+	public WebElement companyErrorMsg;
+	
+	@FindBy(xpath="//span[@for='experience_jobtitle']")
+	public WebElement jobTitleErrorMsg;
+	
+	@FindBy(xpath="//*[@class='table hover']//td")
+	public List<WebElement> workExpTabledata;
 }

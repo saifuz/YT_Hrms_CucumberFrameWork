@@ -9,6 +9,7 @@ import org.junit.Assert;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 
+import com.hrms.testbase.BaseClass;
 import com.hrms.utils.*;
 
 public class EmpQualificationSteps extends CommonMethods {
@@ -19,10 +20,12 @@ public class EmpQualificationSteps extends CommonMethods {
 		clickSubMenu(empList.pimMenu, empList.employeeListMenu);
 		javaWait(5);
 		
-		Click(empList.empSearchId);
-		javaWait(25);
+		Click(empList.empNamesrc);
+		javaWait(5);
+		sendTextWithSpace(empList.empNamesrc, "Md Saifuzzaman", Keys.TAB);
+		javaWait(2);
 		sendTextWithSpace(empList.empSearchId, "6961", Keys.SPACE);
-		javaWait(30);
+		javaWait(10);
 		jsClick(empList.searchBtn);
 		javaWait(10);
 		jsClick(empList.clickSearchedEmployee);
