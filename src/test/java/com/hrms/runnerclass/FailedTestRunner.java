@@ -8,7 +8,7 @@ import io.cucumber.junit.CucumberOptions;
 @RunWith(Cucumber.class)
 @CucumberOptions(
 		features="@target/failedtest.txt",
-		glue="/com/hrms/stepdefinitions",
+		glue="com/hrms/stepdefinitions",
 		dryRun=false,
 		monochrome = true,
 		plugin= {
