@@ -14,7 +14,7 @@ import io.cucumber.junit.CucumberOptions;
 		dryRun=false,
 		monochrome = true,
 		
-		tags="@YT-10",
+		tags="@YT-4",
 		plugin= {
 				"pretty",
 				"html:target/CcDefaultReport",
