@@ -40,10 +40,9 @@ public class BaseClass {
 		default:
 			System.out.println("Please select chrome/firefox/edge/ie brrower only");
 		}
-
+		driver.manage().timeouts().implicitlyWait(Constants.IMPLICITWAIT_TIME, TimeUnit.SECONDS);
 		driver.manage().window().maximize();
 		driver.get(FileReader.getPropertyValue("ProjectUrl"));
-		driver.manage().timeouts().implicitlyWait(Constants.IMPLICITWAIT_TIME, TimeUnit.SECONDS);
 		PageInitializer.initializePages();
 		return driver;
 

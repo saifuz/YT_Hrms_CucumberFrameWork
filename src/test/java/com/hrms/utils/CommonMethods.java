@@ -3,6 +3,7 @@ package com.hrms.utils;
 import java.io.*;
 import java.text.*;
 import java.util.*;
+import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
@@ -39,20 +40,7 @@ public class CommonMethods extends PageInitializer {
 		element.sendKeys(space);
 	}
 
-	/**
-	 * This method will use Thread.sleep from Java
-	 * 
-	 * @param takes second as integer
-	 */
-	public static void javaWait(int second) {
 
-		try {
-			Thread.sleep(second);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
-
-	}
 
 	/**
 	 * This Method is for clicking any WebElement
@@ -196,49 +184,6 @@ public class CommonMethods extends PageInitializer {
 		}
 	}
 
-	/**
-	 * This Method will return Explicit Wait object
-	 * 
-	 * @return
-	 */
-	public static WebDriverWait getWaitObject() {
-		WebDriverWait wait = new WebDriverWait(driver, Constants.EXPLICIT_WAITTIME);
-		return wait;
-	}
-
-	/**
-	 * This Method will take an WebElement as a parameter And wait for the element
-	 * to be available for click.
-	 * 
-	 * @param WebElement
-	 */
-
-	public static void waitForClickability(WebElement element) {
-		getWaitObject().until(ExpectedConditions.elementToBeClickable(element));
-	}
-
-	/**
-	 * This Method will take an WebElement as a parameter And wait for the element
-	 * to be visible to take action.
-	 * 
-	 * @param element
-	 */
-
-	public static void waitForVisibility(WebElement element) {
-		getWaitObject().until(ExpectedConditions.visibilityOf(element));
-	}
-
-	/**
-	 * This method with wait for WebElement to be available for click and then click
-	 * it
-	 * 
-	 * @param WebElement
-	 */
-
-	public static void waitAndClick(WebElement element) {
-		waitForClickability(element);
-		element.click();
-	}
 
 	/**
 	 * This Method is for uploading image in Webpage.
@@ -348,6 +293,77 @@ public class CommonMethods extends PageInitializer {
 		javaWait(2);
 		jsClick(e3);
 		
+	}
+	
+	//===============================All Wait Methods============================================//
+	
+	/**
+	 * This method is for Selenium implicit wait.
+	 * @param second as integer.
+	 */
+	public static void wait(int second) {
+		driver.manage().timeouts().implicitlyWait(second, TimeUnit.SECONDS);
+	}
+	
+	/**
+	 * This method will use Thread.sleep from Java
+	 * it kills all test execution & Thread connections for specified time
+	 * 
+	 * @param takes second as integer
+	 */
+	public static void javaWait(int second) {
+
+		try {
+			Thread.sleep(second);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+
+	}
+	
+	/**
+	 * This Method will return Explicit Wait object
+	 * 
+	 * @return
+	 */
+	public static WebDriverWait getWaitObject() {
+		WebDriverWait wait = new WebDriverWait(driver, Constants.EXPLICIT_WAITTIME);
+		return wait;
+	}
+
+	/**
+	 * This Method will take an WebElement as a parameter And wait for the element
+	 * to be available for click. adn then clicks it
+	 * 
+	 * @param WebElement
+	 */
+
+	public static void waitForClickability(WebElement element) {
+		getWaitObject().until(ExpectedConditions.elementToBeClickable(element));
+		element.click();
+	}
+
+	/**
+	 * This Method will take an WebElement as a parameter And wait for the element
+	 * to be visible to take action.
+	 * 
+	 * @param element
+	 */
+
+	public static void waitForVisibility(WebElement element) {
+		getWaitObject().until(ExpectedConditions.visibilityOf(element));
+	}
+
+	/**
+	 * This method with wait for WebElement to be available for click and then click
+	 * it
+	 * 
+	 * @param WebElement
+	 */
+
+	public static void waitAndClick(WebElement element) {
+		waitForClickability(element);
+		element.click();
 	}
 	
 }
