@@ -269,6 +269,8 @@ public class ReportsPageElements extends PIMMenu {
 	public WebElement runLink;
 	
 	
+	
+	
 	public static void navigateToDefineReportPage() {
 		CommonMethods.clickSubMenu(PIMMenu.pimMenu,PIMMenu.reportsMenu);
 		CommonMethods.Click(addBtn);
