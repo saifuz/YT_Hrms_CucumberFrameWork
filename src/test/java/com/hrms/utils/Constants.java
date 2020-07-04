@@ -16,7 +16,7 @@ public class Constants {
 	public static final String IE_PROPERTY="webdriver.ie.driver";
 	
 	public static final int EXPLICIT_WAITTIME=10;
-	public static final int IMPLICITWAIT_TIME=10;
+	public static final int IMPLICITWAIT_TIME=20;
 	
 	
 	

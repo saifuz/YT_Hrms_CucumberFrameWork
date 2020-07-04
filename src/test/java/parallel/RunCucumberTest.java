@@ -1,21 +1,18 @@
-package com.hrms.runnerclass;
-
-import org.junit.runner.RunWith;
+package parallel;
 
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 
-
+import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-		features="src/test/resources/Features/",
-		glue="com/hrms/stepdefinitions",
+		features="src/test/resources/Features/parallel",
+		glue="parallel",
 		dryRun=false,
 		monochrome = true,
-		strict = true, // checks for implementation og Gherkin Steps
-		
-		tags="@addlanguage1",
+//		strict= true,
+		tags="",
 		plugin= {
 				"pretty",
 				"html:target/CcDefaultReport",
@@ -23,7 +20,6 @@ import io.cucumber.junit.CucumberOptions;
 				"rerun:target/failed.txt"
 		}
 		)
-
-public class TestRunner {
+public class RunCucumberTest {
 
 }

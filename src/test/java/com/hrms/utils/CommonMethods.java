@@ -340,7 +340,7 @@ public class CommonMethods extends PageInitializer {
 
 	public static void waitForClickability(WebElement element) {
 		getWaitObject().until(ExpectedConditions.elementToBeClickable(element));
-		element.click();
+//		element.click();
 	}
 
 	/**

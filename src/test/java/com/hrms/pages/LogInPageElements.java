@@ -2,10 +2,8 @@ package com.hrms.pages;
 
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.*;
-import com.hrms.testbase.BaseClass;
-import com.hrms.testbase.PageInitializer;
-import com.hrms.utils.CommonMethods;
-import com.hrms.utils.FileReader;
+import com.hrms.testbase.*;
+import com.hrms.utils.*;
 
 public class LogInPageElements {
 
@@ -20,13 +18,13 @@ public class LogInPageElements {
 	public WebElement loginPageHeading;
 
 	@FindBy(id = "txtUsername")
-	public WebElement userName;
+	public static WebElement userName;
 
 	@FindBy(id = "txtPassword")
-	public WebElement password;
+	public static WebElement password;
 
 	@FindBy(id = "btnLogin")
-	public WebElement loginBtn;
+	public static WebElement loginBtn;
 
 	/**
 	 * Em-1="Invalid credentials" Em-2 ="Password cannot be empty" Em-3 = "Username
@@ -36,15 +34,15 @@ public class LogInPageElements {
 	public WebElement errorMessage;
 
 	public static void adminLogin() {
-		CommonMethods.sendText(PageInitializer.login.userName, FileReader.getPropertyValue("AdminUserName"));
-		CommonMethods.sendText(PageInitializer.login.password, FileReader.getPropertyValue("AdminPwd"));
-		CommonMethods.Click(PageInitializer.login.loginBtn);
+		CommonMethods.sendText(userName, FileReader.getPropertyValue("AdminUserName"));
+		CommonMethods.sendText(password, FileReader.getPropertyValue("AdminPwd"));
+		CommonMethods.Click(loginBtn);
 	}
 	
-	public static void userLogin(String UserName, String password) {
-		CommonMethods.sendText(PageInitializer.login.userName, UserName);
-		CommonMethods.sendText(PageInitializer.login.password, password);
-		CommonMethods.Click(PageInitializer.login.loginBtn);
+	public void userLogin(String UserName, String password1) {
+		CommonMethods.sendText(userName, UserName);
+		CommonMethods.sendText(password, password1);
+		CommonMethods.Click(loginBtn);
 	}
 
 }

@@ -14,10 +14,10 @@ public class EmpWorkExperienceSteps extends CommonMethods {
 	@And("User is navigated to add Work Experience window")
 	public void user_is_navigated_to_add_Work_Experience_window() {
 		jsClick(empQualification.empQualifications);
-		javaWait(2);
+//		javaWait(2);
 		scrollToElement(empQualification.addWorkExperience);
 		jsClick(empQualification.addWorkExperience);
-		javaWait(20);
+//		javaWait(20);
 	}
 
 	@When("User enters data in specified fields")
@@ -39,8 +39,8 @@ public class EmpWorkExperienceSteps extends CommonMethods {
 			sendText(empQualification.toDate, toDate);
 			sendText(empQualification.commentWorkExp, remarks);
 			Click(empQualification.saveWorkExp);
-			javaWait(2);
-			jsClick(empQualification.addWorkExperience);
+//			javaWait(2);
+			waitAndClick(empQualification.addWorkExperience);
 
 		}
 

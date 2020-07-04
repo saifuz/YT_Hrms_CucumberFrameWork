@@ -31,6 +31,7 @@ public class FileReader {
 	 * @return value of specified key
 	 */
 	public static String getPropertyValue(String key) {
+		FileReader.propertiesFileReader(Constants.CONFIGURATION_FILEPATH);
 			return prop.getProperty(key);
 		
 	}

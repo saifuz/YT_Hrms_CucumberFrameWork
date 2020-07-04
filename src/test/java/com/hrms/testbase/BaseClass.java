@@ -11,7 +11,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class BaseClass {
 
-	public static WebDriver driver = null;
+	public static WebDriver driver;
 
 	public static WebDriver automationSetup() {
 
@@ -43,7 +43,9 @@ public class BaseClass {
 		driver.manage().timeouts().implicitlyWait(Constants.IMPLICITWAIT_TIME, TimeUnit.SECONDS);
 		driver.manage().window().maximize();
 		driver.get(FileReader.getPropertyValue("ProjectUrl"));
+//		driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
 		PageInitializer.initializePages();
+		
 		return driver;
 
 	}

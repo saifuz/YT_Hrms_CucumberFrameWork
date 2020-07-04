@@ -43,7 +43,7 @@
 			<groupId>io.cucumber</groupId>
 			<artifactId>cucumber-junit</artifactId>
 			<version>5.7.0</version>
-			<scope>test</scope>
+			
 		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager -->
@@ -71,9 +71,11 @@
 				<artifactId>maven-surefire-plugin</artifactId>
 				<version>3.0.0-M4</version>
 				<configuration>
+
 					<includes>
-						<include>**/TestRunner.java</include>
+						<include>**/SmokeTestRunner.java</include>
 					</includes>
+
 				</configuration>
 			</plugin>
 

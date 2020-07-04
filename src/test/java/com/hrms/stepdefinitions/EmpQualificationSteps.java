@@ -18,27 +18,28 @@ public class EmpQualificationSteps extends CommonMethods {
 	public void user_is_naviaged_to_Employee_information_page_and_click_on_an_employee_Name() {
 
 		clickSubMenu(empList.pimMenu, empList.employeeListMenu);
-		javaWait(5);
 		
-		Click(empList.empNamesrc);
-		javaWait(5);
+		
+		waitAndClick(empList.empNamesrc);
+//		javaWait(5);
 		sendTextWithSpace(empList.empNamesrc, "Md Saifuzzaman", Keys.TAB);
-		javaWait(2);
+//		javaWait(2);
 		sendTextWithSpace(empList.empSearchId, "6961", Keys.SPACE);
-		javaWait(10);
-		jsClick(empList.searchBtn);
-		javaWait(10);
+//		javaWait(10);
+		waitAndClick(empList.searchBtn);
+//		javaWait(10);
 		jsClick(empList.clickSearchedEmployee);
 
 	}
 
 	@And("User is navigated to add Language window")
 	public void user_is_navigated_to_add_Language_window() {
+		scrollToElement(empQualification.empQualifications);
 		jsClick(empQualification.empQualifications);
-		javaWait(2);
+//		javaWait(2);
 		scrollToElement(empQualification.addLanguage);
 		jsClick(empQualification.addLanguage);
-		javaWait(20);
+//		javaWait(20);
 	}
 
 	@When("User selects a language named {string}")
@@ -55,11 +56,11 @@ public class EmpQualificationSteps extends CommonMethods {
 			String fluency1 = m.get("fluency");
 			String comptency = m.get("Competency");
 			selectDdValue(empQualification.selectFluencyType, fluency1);
-			javaWait(2);
+//			javaWait(2);
 			selectDdValue(empQualification.selectCompetencyType, comptency);
-			javaWait(5);
+//			javaWait(5);
 			Click(empQualification.saveBtn);
-			javaWait(5);
+//			javaWait(5);
 
 			jsClick(empQualification.addLanguage);
 			selectDdValue(empQualification.selectLanguage, languageName);
@@ -70,7 +71,7 @@ public class EmpQualificationSteps extends CommonMethods {
 
 	@Then("User Verifies that language is added with fluency and Competency")
 	public void user_Verifies_that_is_added_with_fluency_and_Competency(DataTable dataTable) {
-		javaWait(10);
+//		javaWait(10);
 		List<String> langCompetency = dataTable.asList();
 		List<WebElement> language = empQualification.langDataTable;
 
@@ -83,9 +84,10 @@ public class EmpQualificationSteps extends CommonMethods {
 			}
 		}
 		
-		javaWait(5);
+//		javaWait(5);
 		scrollToElement(empQualification.langDataTableOnly);
-		
 
 	}
+	
+	
 }
